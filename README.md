@@ -1,6 +1,8 @@
 # OLCFHack15
 OLCF Hackathon 19-23 Oct 2015
 
+EuroHack notes https://github.com/fomics/EuroHack15/wiki
+
 | Schedule | 10/19 | 10/20 | 10/21 | 10/22 | 10/23 |
 |----------|-------------------------------|-------------------------------|------------------------------------|-------------------------------|-------------------------------|
 | 08:30 | Breakfast and  Mentor meeting | Breakfast and  Mentor meeting | Breakfast and  Mentor meeting | Breakfast and  Mentor meeting | Breakfast and  Mentor meeting |
