@@ -1,0 +1,23 @@
+#!/bin/bash
+export CUDA_HOME=_CUDA_HOME_
+export GCC5ROOT=_GCC5ROOT_
+export PATH=$GCC5ROOT/install/bin:$PATH
+export LIBRARY_PATH=$GCC5ROOT/install/lib64:$LIBRARY_PATH
+export LD_LIBRARY_PATH=$GCC5ROOT/install/lib64:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH=$GCC5ROOT/install/include/c++:$CPLUS_INCLUDE_PATH
+export MANPATH=$GCC5ROOT/software/share/man:$MANPATH
+if [ "x$*" == "x" ]; then
+echo "[GCC5 offload wrapper] rungcc5: <gcc command> <args....>"
+echo "Following gcc commands in the path:"
+cmds=`ls $GCC5ROOT/install/bin |grep -v "-"`
+for file in $cmds
+do echo -n "$file "
+done
+echo ";"
+echo "Some examples of compilation:"
+echo "a) using offload via openacc    -> rungcc5 gcc test-pi.c -fopenacc -foffload=nvptx-none -foffload="-O3" -O3 -o gpu.x"
+echo "b) not using offload            -> rungcc5 gcc -O3 test-pi.c -o cpu.x"
+exit;
+else
+exec $*
+fi
